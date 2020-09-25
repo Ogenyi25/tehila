@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+/*--Styles for navbar--*/
+nav {
+    box-shadow: 2px 0px 20px rgb(107, 107, 107);
+    padding: 10px 40px 10px 40px;
+    border-left: none;
+    border-right: none;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+nav ul li.logo {
+    flex: 1;
+    font-size: 30px;
+    font-weight: 700;
+}
+nav ul li span {
+    color: rgb(67, 247, 67);
+}
+nav ul div.items {
+    display: inline-flex;
+    padding: 0px 25px;
+}
+nav ul div.items a {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 12px;
+    font-weight: 600;
+    color: rgb(63, 63, 63);
+    transition: .5s ease-out;
+}
+nav ul div.items a:hover {
+    color: rgb(67, 247, 67);
+    transition: .5s ease-in;
+}
+nav ul li.btn {
+    font-size: 29px;
+    padding: 0 30px;
+    display: none;
+}
+nav ul li.btn span {
+    height: 42px;
+    width: 42px;
+    text-align: center;
+    line-height: 42px;
+    border: 1px solid #c2c2c2;
+    border-radius: 5px;
+    cursor: pointer;
+}
+nav ul li.btn span.show:before {
+    content: '\f00d';
+}
+
+/*--Styles for Mobile Screen navbar--*/
+@media screen and (max-width: 800px) {
+    nav ul li.logo {
+        font-size: 23px;
+        padding: 0 0 0 20px;
+    }
+    nav ul li.btn {
+        display: block;
+    }
+    nav {
+        z-index: 1;
+        padding: 9px 0px 9px 0px;
+    }
+    nav ul div.items {
+        z-index: -1;
+        position: fixed;
+        top: -500px;
+        right: 0;
+        width: 100%;
+        background: #222222;
+        display: inline-block;
+        transition: top .4s;
+    }
+    nav ul div.items.show {
+        top: 77.5px;
+    }
+    nav ul div.items li {
+        text-align: center;
+        line-height: 30px;
+        margin: 30px 0;
+    }
+    nav ul div.items li a {
+        font-size: 20px;
+    }
+}
